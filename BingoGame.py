@@ -7,20 +7,21 @@ words=('ホワイトタイガー','リス','キリン','カピバラ','シカ','
 root=tkinter.Tk()
 cvs = tkinter.Canvas(width=506,height=506)
 cvs.pack()
-cvs.create_line(5,5,5,505,fill="black",width=5)
-cvs.create_line(105,5,105,505,fill="black",width=5)
-cvs.create_line(205,5,205,505,fill="black",width=5)
-cvs.create_line(305,5,305,505,fill="black",width=5)
-cvs.create_line(405,5,405,505,fill="black",width=5)
-cvs.create_line(505,5,505,505,fill="black",width=5)
 
-cvs.create_line(5,5,505,5,fill="black",width=5)
-cvs.create_line(5,105,505,105,fill="black",width=5)
-cvs.create_line(5,205,505,205,fill="black",width=5)
-cvs.create_line(5,305,505,305,fill="black",width=5)
-cvs.create_line(5,405,505,405,fill="black",width=5)
-cvs.create_line(5,505,505,505,fill="black",width=5)
+x1=5
+x2=5
+y1=5
+y2=5
+count=0
+for count in range(6):
+    cvs.create_line(x1,5,x2,505,fill="black",width=5)
+    x1=x1+100
+    x2=x2+100
 
+for count in range(6):
+    cvs.create_line(5,y1,505,y2,fill="black",width=5)
+    y1=y1+100
+    y2=y2+100
 
 x=55
 y=55
@@ -29,8 +30,13 @@ count2=0
 
 for count in range(5): 
     for count in range(5): 
-        word=random.choice(words)  
-        cvs.create_text(x,y,text=word,fill="black",font=("System",10))
+        word=random.choice(words) 
+        num=len(word) 
+        print(num)
+        if num >= 5:
+            cvs.create_text(x,y,text=word,fill="black",font=("System",10))
+        else:    
+             cvs.create_text(x,y,text=word,fill="black",font=("System",10))
         x=x+100
     x=55
     y=y+100
