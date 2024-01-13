@@ -1,7 +1,8 @@
 import tkinter
 import random
 
-words=('Hello','come','kome','peg')
+words=('ホワイトタイガー','リス','キリン','カピバラ','シカ','馬','レッサーパンダ','ビーバー','アルパカ','アルマジロ','カワウソ','ペンギン','フクロウ','カメ','ヘビ','ヒツジ','ウサギ','カンガルー'
+       ,'ヤギ','サル','ゾウ','ワニ','コウモリ','ラクダ','サイ','シマウマ')
 
 root=tkinter.Tk()
 cvs = tkinter.Canvas(width=506,height=506)
@@ -24,38 +25,16 @@ cvs.create_line(5,505,505,505,fill="black",width=5)
 x=55
 y=55
 count=0
+count2=0
 
-for count in range(5):  
-    word=random.choice(words)  
-    cvs.create_text(x,y,text=word,fill="black",font=("System",10))
-    x=x+100
+for count in range(5): 
+    for count in range(5): 
+        word=random.choice(words)  
+        cvs.create_text(x,y,text=word,fill="black",font=("System",10))
+        x=x+100
+    x=55
+    y=y+100
 
-x=55
-y=55
-for count in range(5):  
-    word=random.choice(words)  
-    cvs.create_text(x,y+100,text=word,fill="black",font=("System",10))
-    x=x+100
 
-x=55
-y=55
-for count in range(5):  
-    word=random.choice(words)  
-    cvs.create_text(x,y+200,text=word,fill="black",font=("System",10))
-    x=x+100
-
-x=55
-y=55
-for count in range(5):  
-    word=random.choice(words)  
-    cvs.create_text(x,y+300,text=word,fill="black",font=("System",10))
-    x=x+100
-
-x=55
-y=55
-for count in range(5):  
-    word=random.choice(words)  
-    cvs.create_text(x,y+400,text=word,fill="black",font=("System",10))
-    x=x+100
 
 root.mainloop()
