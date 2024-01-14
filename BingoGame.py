@@ -34,9 +34,9 @@ for count in range(5):
         num=len(word) 
         print(num)
         if num >= 5:
-            cvs.create_text(x,y,text=word,fill="black",font=("System",10))
+            cvs.create_text(x,y,text=word,fill="red")
         else:    
-             cvs.create_text(x,y,text=word,fill="black",font=("System",10))
+             cvs.create_text(x,y,text=word,fill="black",font=("System",1))
         x=x+100
     x=55
     y=y+100
